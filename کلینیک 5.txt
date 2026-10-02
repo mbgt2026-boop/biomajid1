@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Biomajid</title>
+<link rel="manifest" href='data:application/json,{"name":"Biomajid","short_name":"Biomajid","start_url":".","display":"standalone","theme_color":"#0ea5e9","background_color":"#fff","icons":[{"src":"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2720%27 fill=%27%230ea5e9%27/%3E%3C/svg%3E","sizes":"100x100","type":"image/svg+xml"}]}'>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Tahoma,sans-serif}
+body{background:#fdfcf8;color:#1a1a1a;line-height:1.6}
+a{color:#0ea5e9;text-decoration:none}
+button,input,select,textarea{font:inherit;cursor:pointer}
+.c{max-width:1000px;margin:0 auto;padding:0 1rem}
+header{background:#fff;border-bottom:1px solid #eee;padding:.75rem 0;position:sticky;top:0;z-index:9}
+.hd{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.logo{font-weight:bold;font-size:1.1rem}
+nav{margin-right:auto;display:flex;gap:.3rem;flex-wrap:wrap}
+nav a{padding:.4rem .7rem;border-radius:8px;color:#555;font-size:.9rem}
+nav a:hover,nav a.on{background:#eee;color:#0ea5e9}
+.ib{width:36px;height:36px;border-radius:8px;background:#eee;border:0;font-size:1rem}
+.hero{text-align:center;padding:2rem 0}
+.hero h1{color:#0ea5e9;margin-bottom:1rem;font-size:1.8rem}
+.btn{padding:.7rem 1.3rem;border-radius:10px;font-weight:bold;display:inline-block;margin:.3rem}
+.bp{background:#0ea5e9;color:#fff}
+.be{background:#f59e0b;color:#fff}
+.bo{background:#fff;border:1.5px solid #ddd}
+section{padding:1.5rem 0}
+h2{text-align:center;margin-bottom:1rem}
+.g{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.card{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+.card i{font-size:1.5rem;font-style:normal}
+.card h3{font-size:.95rem;margin:.4rem 0}
+.sg{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1rem}
+.sb{width:40px;height:40px;border-radius:10px;color:#fff;display:grid;place-items:center;font-weight:bold}
+.fab{position:fixed;bottom:1rem;left:1rem;width:56px;height:56px;border-radius:50%;background:#0ea5e9;color:#fff;border:0;font-size:1.5rem;z-index:20}
+.cb{position:fixed;bottom:5rem;left:1rem;width:min(360px,calc(100vw - 2rem));height:min(500px,calc(100vh - 7rem));background:#fff;border:1px solid #ddd;border-radius:14px;display:none;flex-direction:column;z-index:19}
+.cb.on{display:flex}
+.ch{padding:.6rem 1rem;border-bottom:1px solid #eee;display:flex;gap:.5rem;align-items:center}
+.cy{flex:1;overflow-y:auto;padding:.6rem;display:flex;flex-direction:column;gap:.4rem}
+.m{padding:.5rem .8rem;border-radius:10px;font-size:.85rem;max-width:85%}
+.m.b{background:#f0f0f0}
+.m.u{background:#0ea5e9;color:#fff;align-self:flex-end}
+.ci{padding:.5rem;border-top:1px solid #eee;display:flex;gap:.3rem}
+.ci input{flex:1;padding:.5rem .8rem;border:1px solid #ddd;border-radius:20px}
+.ci button{width:36px;height:36px;border-radius:50%;background:#0ea5e9;color:#fff;border:0}
+.md{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;place-items:center;padding:1rem;z-index:50}
+.md.on{display:grid}
+.mc{background:#fff;border-radius:14px;padding:1.5rem;max-width:480px;width:100%;max-height:90vh;overflow-y:auto}
+.mc input,.mc select,.mc textarea{width:100%;padding:.6rem;border:1px solid #ddd;border-radius:8px;margin-top:.3rem}
+label{display:block;margin:.5rem 0;font-size:.9rem}
+.soc{background:#fff;border-top:1px solid #eee;padding:1.5rem 0;text-align:center;margin-top:2rem}
+footer{text-align:center;padding:1rem;color:#888;font-size:.8rem}
+</style>
+</head>
+<body>
+<header><div class="c hd">
+<a class="logo" href="#/home">🌹 Biomajid</a>
+<nav id="nav"></nav>
+<button class="ib" id="lg">🌐</button>
+</div></header>
+<main id="app" class="c"></main>
+<div class="soc"><div class="c"><b>ما را دنبال کنید</b><div class="sg" id="sg"></div></div></div>
+<footer>© Biomajid</footer>
+<button class="fab" id="fb">💬</button>
+<div class="cb" id="cb">
+<div class="ch"><span style="font-size:1.3rem">🤖</span><div style="flex:1"><b>Dr. Majid</b><br><small style="color:#888">آنلاین ۲۴/۷</small></div><button onclick="closeM('cb')" style="border:0;background:none">✕</button></div>
+<div class="cy" id="cy"></div>
+<div class="ci"><input id="ci" placeholder="پیام..."><button id="cs">➤</button></div>
+</div>
+<div class="md" id="m1"><div class="mc">
+<h3>👋 خوش آمدید</h3>
+<p style="color:#666;font-size:.9rem;margin:.5rem 0">راه‌های دریافت پاسخ:</p>
+<div id="ml1" style="margin:1rem 0"></div>
+<button class="btn bo" onclick="closeM('m1')">بعداً</button>
+<button class="btn bp" onclick="closeM('m1')">موافقم</button>
+</div></div>
+<div class="md" id="m2"><div class="mc">
+<h3>🌐 انتخاب زبان</h3>
+<div id="ml2" style="margin:1rem 0"></div>
+</div></div>
+<div class="md" id="m4"><div class="mc">
+<h3>👨‍⚕️ اتصال به کارشناس</h3>
+<label>نام<input id="en"></label>
+<label>تلفن<input id="ep" type="tel"></label>
+<label>تخصص<select id="es"></select></label>
+<label>توضیح<textarea id="ed" rows="3"></textarea></label>
+<button class="btn bo" onclick="closeM('m4')">انصراف</button>
+<button class="btn be" id="exS">🚀 ارجاع</button>
+</div></div>
+<script>
+var CO=[['IR','🇮🇷','98'],['IQ','🇮🇶','964'],['TR','🇹🇷','90'],['TM','🇹🇲','993'],['US','🇺🇸','1'],['CA','🇨🇦','1'],['IT','🇮🇹','39'],['ES','🇪🇸','34'],['AU','🇦🇺','61'],['GB','🇬🇧','44'],['DE','🇩🇪','49'],['FR','🇫🇷','33'],['AE','🇦🇪','971'],['SA','🇸🇦','966'],['EG','🇪🇬','20'],['RU','🇷🇺','7'],['CN','🇨🇳','86'],['IN','🇮🇳','91'],['PK','🇵🇰','92'],['AF','🇦🇫','93'],['AZ','🇦🇿','994'],['NL','🇳🇱','31'],['SE','🇸🇪','46'],['GR','🇬🇷','30'],['BR','🇧🇷','55'],['JP','🇯🇵','81'],['KR','🇰🇷','82']];
+var LN=[['fa','فارسی'],['en','English'],['ar','العربية'],['tr','Türkçe'],['tk','Türkmençe'],['it','Italiano'],['es','Español']];
+var T={fa:{home:'خانه',chat:'مشاوره',exp:'کارشناسان',vid:'ویدیوها',guide:'راهنما',ai:'AI',hero:'به Biomajid خوش آمدید',sub:'مشاوره پزشکی ۲۴/۷',s1:'شروع مشاوره',s2:'اتصال به کارشناس',svc:'خدمات',expT:'کارشناسان',vidT:'ویدیوها',wel:'سلام! من دکتر مجید هستم.',ph:'پیام...',ref:'✅ ارجاع شد',g1:'زبان را از 🌐 انتخاب کنید',g2:'روی 💬 برای چت کلیک کنید',g3:'روی 👨‍⚕️ برای کارشناس بزنید',g4:'آدرس #/ai برای ربات‌های AI'},en:{home:'Home',chat:'Chat',exp:'Experts',vid:'Videos',guide:'Guide',ai:'AI',hero:'Welcome to Biomajid',sub:'24/7 medical consultation',s1:'Start',s2:'Connect',svc:'Services',expT:'Experts',vidT:'Videos',wel:'Hi! I am Dr. Majid.',ph:'Message...',ref:'✅ Referred',g1:'Use 🌐 to pick language',g2:'Click 💬 to chat',g3:'Tap 👨‍⚕️ for expert',g4:'#/ai for AI agents'}};
+var SP=[['🩺','پزشکی'],['❤️','قلب'],['🧴','پوست'],['👶','اطفال'],['🧠','روان'],['🦷','دندان'],['🧬','اعصاب'],['🚨','اورژانس']];
+var EX=[['👩‍⚕️','دکتر سارا احمدی','اطفال',4.9,'989120000001'],['👨‍⚕️','دکتر علی رضایی','قلب',4.8,'989120000002'],['👩‍⚕️','دکتر مریم کریمی','پوست',4.9,'989120000003'],['👨‍⚕️','دکتر حسین نوری','اعصاب',4.7,'989120000004'],['👩‍⚕️','دکتر زهرا محمدی','روان',4.9,'989120000005'],['👨‍⚕️','دکتر رضا کاظمی','دندان',4.8,'989120000006']];
+var SV=[['🩺','مشاوره'],['💊','دارو'],['🧠','روان'],['👶','اطفال'],['🦷','دندان'],['💉','واکسن'],['❤️','قلب'],['🧬','آزمایش']];
+var SC=[['Instagram','#E4405F','https://instagram.com/biomajid'],['YouTube','#FF0000','https://youtube.com/@biomajid'],['Telegram','#0088CC','https://t.me/biomajid'],['WhatsApp','#25D366','https://wa.me/989120000000'],['Facebook','#1877F2','https://facebook.com/biomajid'],['LinkedIn','#0A66C2','https://linkedin.com/company/biomajid'],['TikTok','#000','https://tiktok.com/@biomajid'],['X','#000','https://x.com/biomajid'],['Aparat','#ED145B','https://aparat.com/biomajid'],['Rubika','#7C3AED','https://rubika.ir/biomajid'],['Bale','#0EA5E9','https://ble.ir/biomajid'],['Eitaa','#F97316','https://eitaa.com/biomajid']];
+var S={lang:'fa',chat:[]};
+function $(s){return document.querySelector(s)}
+function nav(r){location.hash='#/'+r}
+function closeM(id){$('#'+id).classList.remove('on')}
+function openM(id){$('#'+id).classList.add('on')}
+function L(k){return (T[S.lang]&&T[S.lang][k])||T.fa[k]||k}
+function renderNav(){var items=['home','chat','exp','vid','guide','ai'];$('#nav').innerHTML=items.map(function(i){return '<a href="#/'+i+'">'+L(i)+'</a>'}).join('')}
+function route(){var h=(location.hash||'#/home').replace('#/','');var M={home:vH,chat:vC,exp:vE,vid:vV,guide:vG,ai:vA};$('#app').innerHTML=(M[h]||vH)();renderNav();if(h==='chat')renderChat('#cpy');window.scrollTo(0,0)}
+function vH(){return '<section class="hero"><h1>'+L('hero')+'</h1><p>'+L('sub')+'</p><a href="#/chat" class="btn bp">💬 '+L('s1')+'</a><a href="#/exp" class="btn be">👨‍⚕️ '+L('s2')+'</a></section><section><h2>'+L('svc')+'</h2><div class="g">'+SV.map(function(s){return '<div class="card"><i>'+s[0]+'</i><h3>'+s[1]+'</h3></div>'}).join('')+'</div></section>'}
+function vC(){return '<section><h2>💬 '+L('chat')+'</h2><div style="max-width:700px;margin:0 auto"><div id="cpy" style="min-height:300px;max-height:400px;overflow-y:auto;background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem;display:flex;flex-direction:column;gap:.4rem"></div><div style="display:flex;gap:.4rem;margin-top:.5rem"><button class="btn bo" style="flex:1" onclick="openExpert()">👨‍⚕️ '+L('exp')+'</button></div><div style="display:flex;gap:.3rem;margin-top:.5rem"><input id="cpI" placeholder="'+L('ph')+'" style="flex:1;padding:.6rem;border:1px solid #ddd;border-radius:20px"><button onclick="sendTo(\'#cpI\',\'#cpy\')" style="width:36px;border-radius:50%;background:#0ea5e9;color:#fff;border:0">➤</button></div></div></section>'}
+function vE(){return '<section><h2>👨‍⚕️ '+L('expT')+'</h2><div class="g">'+EX.map(function(e){return '<div class="card"><div style="display:flex;gap:.5rem;align-items:center"><span style="font-size:2rem">'+e[0]+'</span><div><b>'+e[1]+'</b><br><small style="color:#888">'+e[2]+'</small></div><span style="margin-right:auto;background:#eee;padding:.1rem .4rem;border-radius:6px;font-size:.75rem">⭐ '+e[3]+'</span></div><div style="display:flex;gap:.3rem;margin-top:.6rem"><a href="https://wa.me/'+e[4]+'" target="_blank" style="padding:.3rem .6rem;border:1px solid #ddd;border-radius:6px">💬</a><button class="btn be" style="flex:1;padding:.3rem" onclick="openExpert()">ارجاع</button></div></div>'}).join('')+'</div></section>'}
+function vV(){return '<section><h2>🎬 '+L('vidT')+'</h2><div class="g">'+[['🏥','آشنایی'],['💚','عادت سلامت'],['🧘','یوگا'],['🥗','تغذیه']].map(function(v){return '<div class="card"><div style="aspect-ratio:16/9;background:#0ea5e9;display:grid;place-items:center;font-size:2.5rem;border-radius:8px">'+v[0]+'</div><h3 style="margin-top:.5rem">'+v[1]+'</h3></div>'}).join('')+'</div></section>'}
+function vG(){return '<section><h2>'+L('guide')+'</h2><div style="max-width:700px;margin:0 auto">'+[L('g1'),L('g2'),L('g3'),L('g4')].map(function(g,i){return '<div class="card" style="display:flex;gap:.7rem;margin-bottom:.7rem;align-items:center"><div style="width:30px;height:30px;background:#0ea5e9;color:#fff;border-radius:8px;display:grid;place-items:center;font-weight:bold">'+(i+1)+'</div><div>'+g+'</div></div>'}).join('')+'</div></section>'}
+function vA(){return '<section><h2>🤖 AI Page</h2><div class="card"><pre style="white-space:pre-wrap;direction:ltr;text-align:left;font-size:.8rem;font-family:monospace"># BIOMAJID CLINIC\n# Endpoint: '+location.href.replace(/\/[^\/]*$/,'/')+'#/ai\n\n## SERVICES\n'+SV.map(function(s){return '- '+s[1]}).join('\n')+'\n\n## SPECIALTIES\n'+SP.map(function(s){return '- '+s[1]}).join('\n')+'\n\n## EXPERTS\n'+EX.map(function(e){return '- '+e[1]+' ('+e[2]+')'}).join('\n')+'\n\n## SOCIAL\n'+SC.map(function(s){return '- '+s[0]+': '+s[2]}).join('\n')+'\n\n## ROUTES\n#/home #/chat #/exp #/vid #/guide #/ai\n\n© '+new Date().getFullYear()+' Biomajid</pre></div></section>'}
+function renderChat(sel){var c=$(sel);if(!c)return;c.innerHTML='';if(!S.chat.length)S.chat=[['b',L('wel')]];S.chat.forEach(function(m){var d=document.createElement('div');d.className='m '+m[0];d.textContent=m[1];c.appendChild(d)});c.scrollTop=c.scrollHeight}
+function sendTo(sel,box){var inp=$(sel);if(!inp||!inp.value.trim())return;var txt=inp.value.trim();inp.value='';S.chat.push(['u',txt]);var c=$(box);var d=document.createElement('div');d.className='m u';d.textContent=txt;c.appendChild(d);c.scrollTop=c.scrollHeight;setTimeout(function(){var r='سلام. برای فعال‌سازی هوش مصنوعی، از پنل ادمین کلید API را وارد کنید. برای اتصال به کارشناس انسانی، روی دکمه 👨‍⚕️ بزنید.';S.chat.push(['b',r]);var d2=document.createElement('div');d2.className='m b';d2.textContent=r;c.appendChild(d2);c.scrollTop=c.scrollHeight},600)}
+function openExpert(){var es=$('#es');es.innerHTML=SP.map(function(s){return '<option>'+s[0]+' '+s[1]+'</option>'}).join('');openM('m4')}
+function openLang(){var ml=$('#ml2');ml.innerHTML=LN.map(function(l){return '<div onclick="setLang(\''+l[0]+'\')" style="padding:.6rem;border:1px solid #ddd;border-radius:8px;margin-bottom:.4rem;cursor:pointer">'+l[1]+'</div>'}).join('');openM('m2')}
+function setLang(k){S.lang=k;try{localStorage.setItem('bj_lang',k)}catch(e){}closeM('m2');route()}
+function renderSC(){$('#sg').innerHTML=SC.map(function(s){return '<a href="'+s[2]+'" class="sb" style="background:'+s[1]+'" title="'+s[0]+'" target="_blank">'+s[0].charAt(0)+'</a>'}).join('')}
+function init(){try{var l=localStorage.getItem('bj_lang');if(l)S.lang=l}catch(e){}renderSC();route();try{if(!localStorage.getItem('bj_consent')){setTimeout(function(){$('#ml1').innerHTML='<label><input type="checkbox"> پیامک</label><br><label><input type="checkbox"> واتس‌اپ</label><br><label><input type="checkbox"> ایمیل</label><br><label><input type="checkbox"> تماس</label>';openM('m1')},1000)}}catch(e){}}
+$('#lg').onclick=openLang;
+$('#fb').onclick=function(){var b=$('#cb');b.classList.toggle('on');if(b.classList.contains('on')){renderChat('#cy');setTimeout(function(){$('#ci').focus()},100)}};
+$('#cs').onclick=function(){sendTo('#ci','#cy')};
+$('#ci').onkeydown=function(e){if(e.key==='Enter')sendTo('#ci','#cy')};
+$('#exS').onclick=function(){if(!$('#en').value||!$('#ep').value)return alert('نام و تلفن را وارد کنید');closeM('m4');alert(L('ref'))};
+document.querySelectorAll('.md').forEach(function(m){m.onclick=function(e){if(e.target===m)m.classList.remove('on')}});
+init();
+</script>
+</body>
+</html>
